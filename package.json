@@ -1,0 +1,19 @@
+{
+  "name": "mytodo",
+  "version": "1.0.0",
+  "description": "A Todo Application Created using PERN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "\"todo\"",
+    "\"crud\""
+  ],
+  "author": "Chiraag Kakar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
+  }
+}
