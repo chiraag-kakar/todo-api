@@ -36,8 +36,11 @@ app.get("/todos/:id",async(req,res)=>{
 });
 
 //get a todo by title
-app.get("/todos/:title",async(req,res)=>{
+app.get("/todos/search/title",async(req,res)=>{
+    
     const {title} = req.body;
+    console.log(title);
+    console.log(typeof(title));
     try {
         const todo_title = await pool.query("SELECT * FROM  todo WHERE title=$1",[title]);
         res.json(todo_title.rows[0]);
@@ -46,7 +49,7 @@ app.get("/todos/:title",async(req,res)=>{
     }
 });
 //get a todo by date
-app.get("/todos/:created_on",async(req,res)=>{
+app.get("/todos/create/created_on",async(req,res)=>{
     const {created_on} = req.body;
     try {
         const todo_date = await pool.query("SELECT * FROM  todo WHERE created_on=$1",[created_on]);
@@ -56,7 +59,7 @@ app.get("/todos/:created_on",async(req,res)=>{
     }
 });
 //get a todo by state
-app.get("/todos/:todo_state",async(req,res)=>{
+app.get("/todos/state/todo_state",async(req,res)=>{
     const {todo_state} = req.body;
     try {
         const todo_by_state = await pool.query("SELECT * FROM  todo WHERE todo_state=$1",[todo_state]);
@@ -66,8 +69,8 @@ app.get("/todos/:todo_state",async(req,res)=>{
     }
 });
 //get a todo by priority
-app.get("/todos/:todo_priority",async(req,res)=>{
-    const {title} = req.body;
+app.get("/todos/prior/todo_priority",async(req,res)=>{
+    const {todo_priority} = req.body;
     try {
         const todo_by_priority = await pool.query("SELECT * FROM  todo WHERE todo_priority=$1",[todo_priority]);
         res.json(todo_by_priority.rows[0]);
@@ -87,7 +90,7 @@ app.post("/todos",async(req,res)=>{
         const {todo_priority} = req.body;
         const {created_on} = req.body;
 
-        const newTodo = await pool.query("INSERT INTO todo (title), (description) , (todo_state) ,(todo_priority), (created_on) VALUES ($1), ($2), ($3), ($4), ($5) RETURNING *", [title, description, todo_state, todo_priority, created_on]);
+        const newTodo = await pool.query("INSERT INTO todo (title, description, todo_state, todo_priority, created_on) VALUES ($1, $2, $3, $4, $5) RETURNING *", [title, description, todo_state, todo_priority, created_on]);
         res.json(newTodo.rows[0]);
     } catch (err) {
         console.error(err.message);
@@ -102,7 +105,7 @@ app.put("/todos/:id",async(req,res)=>{
         const {description} = req.body; //SET
         const {todo_state} = req.body;//SET
         const {todo_priority} = req.body;//ET
-        const updateTodo = await pool.query("UPDATE todo SET title = $1, description = $2, todo_state = $3, todo_priority = $4  WHERE todo_id = $5",[title,description,todo_state,todo_priority,id]);
+        const updateTodo = await pool.query("UPDATE todo SET (title = $1, description = $2, todo_state = $3, todo_priority = $4)  WHERE todo_id = $5",[title,description,todo_state,todo_priority,id]);
 
         res.json(updateTodo);
     } catch (err) {

@@ -8,5 +8,5 @@
 CREATE DATABASE todo_datastore;
 
 CREATE TABLE todo(
-    todo_id SERIAL PRIMARY KEY,title VARCHAR(20) description VARCHAR(255), created_on DATE, todo_state NUMERIC, todo_priority VARCHAR(20)
+    todo_id SERIAL PRIMARY KEY,title VARCHAR(20), description VARCHAR(255), created_on DATE, todo_state NUMERIC, todo_priority VARCHAR(20)
 );
