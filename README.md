@@ -87,11 +87,15 @@ module.exports = pool;
 * `PUT`: Updates a todo 
 * `DELETE`: Deletes a todo
 
-## /todos/:state
+
+## /todos/:title
 
 ## /todos/:created_on
 
-## /todos/:title
+## /todos/:priority
+
+## /todos/:state
+
 
 
 ---
@@ -105,6 +109,6 @@ module.exports = pool;
 ---
 
 # API Specifications at a Glance
-
-
-
+- [x] Supports basic CRUD operations.
+- [x] User can search an existing todo by title/date/priority/state.
+- [x] User can prioritize the todos.
