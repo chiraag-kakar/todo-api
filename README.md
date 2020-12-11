@@ -4,6 +4,8 @@ A RESTful web application where user can create, read, update and delete todos, 
 
 
 Note 1 : It is assumed that the user has **Postman** installed to test the api by sending HTTP requests and **PostgreSQL** to be used as Database.
+
+
 Note 2 : It is also assumed that the user has **Node** (LTS version) , **npm**  &  **nodemon** installed globally.
 
 # Installation & Run
