@@ -10,20 +10,20 @@ Note 2 : It is also assumed that the user has **Node** (LTS version) , **npm**  
 
 # Installation & Run
 ---
-Step : 1 | Clone this project using Git
+### Step : 1 | Clone this project using Git
 * Open the command prompt/terminal and enter the following command
 ```
 git clone https://github.com/chiraag-kakar/todo-api.git
 ```
 
 
-Step : 2 | Change the current directory to project directory and install dependencies
+### Step : 2 | Change the current directory to project directory and install dependencies
 ```
 cd todo-api && npm install
 ```
 
 
-Step : 3 | Start the postgres server and create database and table with the required schema. 
+### Step : 3 | Start the postgres server and create database and table with the required schema. 
 * Open another terminal/Command Prompt and enter the following command :
 ```
 psql -U postgres
@@ -46,7 +46,7 @@ CREATE TABLE todo(
 );
 ```
 
-Step : 4 | Start the API server
+### Step : 4 | Start the API server
   * Get back to the terminal where you installed dependencies for the project and enter the following command to start the API server
 ```
 nodemon
@@ -78,23 +78,23 @@ module.exports = pool;
 # API Endpoint : http://127.0.0.1:5000
 ```
 
-## /todos
+### /todos
 * `GET`: Gets all Todos
 * `POST`: Creates a Todo
 
-## /todos/:id
+### /todos/:id
 * `GET`: Gets a todo by todo_id
 * `PUT`: Updates a todo 
 * `DELETE`: Deletes a todo
 
 
-## /todos/:title
+### /todos/:title
 
-## /todos/:created_on
+### /todos/:created_on
 
-## /todos/:priority
+### /todos/:priority
 
-## /todos/:state
+### /todos/:state
 
 
 
