@@ -1,6 +1,6 @@
 # Todo API
 ---
-A RESTful web application where user can create, read, update and delete todos, prioritize them and search them by title, date and state built using PERN stack.
+A RESTful web application where user can create, read, update and delete todos, prioritize them and search them by title, date and state built using Nodejs, Express and PostgreSQL stack.
 
 
 Note 1 : It is assumed that the user has **Postman** installed to test the api by sending HTTP requests and **PostgreSQL** to be used as Database.
