@@ -46,7 +46,7 @@ CREATE TABLE todo(
 );
 ```
 
-* Start the API server
+Step : 4 | Start the API server
   * Get back to the terminal where you installed dependencies for the project and enter the following command to start the API server
 ```
 nodemon
