@@ -12,7 +12,7 @@ Note 2 : It is also assumed that the user has **Node** (LTS version) , **npm**  
 ---
 ### Step : 1 | Clone this project using Git
 * Open the command prompt/terminal and enter the following command
-```
+```shell
 git clone https://github.com/chiraag-kakar/todo-api.git
 ```
 
@@ -40,7 +40,7 @@ CREATE DATABASE todo_datastore;
 ```
 
 * Create Table with required schema
-```
+```sql
 CREATE TABLE todo(
     todo_id SERIAL PRIMARY KEY, description VARCHAR(255), created_on DATE, todo_state NUMERIC, todo_priority VARCHAR(20)
 );
@@ -54,7 +54,7 @@ nodemon
 
 Note : Make sure before starting the API server that you have made changes to the database configuration file (db.js) accordingly and replaced the database name and superuser password with yours.
 
-```(js)
+```js
 const Pool = require("pg").Pool;
 
 const pool = new Pool({
