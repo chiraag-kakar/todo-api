@@ -101,6 +101,8 @@ module.exports = pool;
 ---
 # Approach
 
+![](https://github.com/chiraag-kakar/todo-api/blob/main/approach.png)
+
 
 ---
 # Database Schema
