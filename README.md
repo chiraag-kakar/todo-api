@@ -88,13 +88,16 @@ module.exports = pool;
 * `DELETE`: Deletes a todo
 
 
-### /todos/:title
+### /todos/search/title
+* `GET`: Gets a todo by title
 
-### /todos/:created_on
+### /todos/create/created_on
+* `GET`:Gets a todo by date when it was created
+### /todos/state/todo_state
+* `GET`:Gets a todo by its state. [state = 1 implies task completed , state = 0 implies task pending]
 
-### /todos/:priority
-
-### /todos/:state
+### /todos/prior/todo_priority
+* `GET`:Gets a todo by its priority. [schema for priority being varchar type , so it can be set as high , moderate , low]
 
 
 
@@ -106,11 +109,22 @@ module.exports = pool;
 
 ---
 # Database Schema
-
+| todo_list     | 6 rows             |
+|---------------|--------------------|
+| todo_id       | SERIAL PRIMARY KEY |
+| title         | VARCHAR(20)        |
+| description   | VARCHAR(255)       |
+| created_on    | DATE               |
+| todo_state    | NUMERIC            |
+| todo_priority | VARCHAR(20)        |
 
 ---
 
 # API Specifications at a Glance
 - [x] Supports basic CRUD operations.
-- [x] User can search an existing todo by title/date/priority/state.
-- [x] User can prioritize the todos.
+- [x] User can get an existing todo by title/date/priority/state.
+- [x] User can prioritize (by updating the priority) the todos.
+
+
+
+## Author : [Chiraag Kakar](https://github.com/chiraag-kakar)
